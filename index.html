@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rebero — Intelligente Bewehrungsdaten</title>
+    <meta name="description" content="PDF-Bewehrungspläne automatisch in BVBS/ABS-Dateien umwandeln. KI-gestützte Extraktion, Validierung und Export für Stahlbau-Profis.">
+    <link rel="icon" type="image/png" href="logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #004ac6 0%, #2563eb 50%, #3b82f6 100%); }
+        .gradient-text { background: linear-gradient(135deg, #004ac6, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -8px rgba(21,28,39,0.12); }
+        .pricing-card:hover { transform: translateY(-4px); }
+        .hero-pattern { background-image: radial-gradient(#e2e8f8 1px, transparent 1px); background-size: 32px 32px; }
+        @keyframes fade-up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-up { animation: fade-up 0.6s ease-out forwards; }
+        .animate-delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .animate-delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .animate-delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .animate-delay-4 { animation-delay: 0.4s; opacity: 0; }
+    </style>
+</head>
+<body class="bg-[#f9f9ff] text-[#151c27] antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-[#e2e8f8]/50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="Rebero" class="h-8">
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#features" class="text-sm font-medium text-[#434655] hover:text-[#004ac6] transition-colors">Features</a>
+                <a href="#workflow" class="text-sm font-medium text-[#434655] hover:text-[#004ac6] transition-colors">So funktioniert's</a>
+                <a href="#pricing" class="text-sm font-medium text-[#434655] hover:text-[#004ac6] transition-colors">Preise</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="https://app.rebero.io/login" class="text-sm font-medium text-[#434655] hover:text-[#004ac6] transition-colors">Anmelden</a>
+                <a href="https://app.rebero.io/login" class="gradient-bg text-white px-5 py-2.5 rounded-lg text-sm font-semibold shadow-lg shadow-[#004ac6]/20 hover:opacity-90 transition-all">
+                    Kostenlos testen
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative pt-32 pb-20 overflow-hidden">
+        <div class="absolute inset-0 hero-pattern opacity-40"></div>
+        <div class="relative max-w-6xl mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="animate-fade-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#004ac6]/5 border border-[#004ac6]/10 text-sm font-medium text-[#004ac6] mb-8">
+                    <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+                    Jetzt verfuegbar — KI-gestuetzte BVBS-Konvertierung
+                </div>
+                <h1 class="animate-fade-up animate-delay-1 text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+                    Bewehrungsplaene
+                    <span class="gradient-text"> automatisch</span>
+                    digitalisieren
+                </h1>
+                <p class="animate-fade-up animate-delay-2 text-xl text-[#434655] leading-relaxed mb-10 max-w-2xl mx-auto">
+                    Rebero wandelt PDF-Bewehrungsplaene in Sekunden in BVBS/ABS-Dateien um.
+                    KI-Extraktion, automatische Validierung, sofortiger Export.
+                </p>
+                <div class="animate-fade-up animate-delay-3 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="https://app.rebero.io/login" class="gradient-bg text-white px-8 py-4 rounded-xl text-base font-semibold shadow-xl shadow-[#004ac6]/25 hover:shadow-2xl hover:shadow-[#004ac6]/30 hover:-translate-y-0.5 transition-all">
+                        Jetzt kostenlos starten
+                    </a>
+                    <a href="#workflow" class="flex items-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-[#434655] bg-white border border-[#e2e8f8] hover:border-[#004ac6]/30 hover:text-[#004ac6] transition-all">
+                        So funktioniert's
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="animate-fade-up animate-delay-4 mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+                <div class="text-center">
+                    <p class="text-3xl font-bold gradient-text">98%</p>
+                    <p class="text-sm text-[#737686] mt-1">Erkennungsrate</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-3xl font-bold gradient-text">&lt;30s</p>
+                    <p class="text-sm text-[#737686] mt-1">Pro Bewehrungsplan</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-3xl font-bold gradient-text">ABS 3.x</p>
+                    <p class="text-sm text-[#737686] mt-1">Standard-konform</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-3xl font-bold gradient-text">DSGVO</p>
+                    <p class="text-sm text-[#737686] mt-1">Server in Deutschland</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-sm font-bold uppercase tracking-widest text-[#004ac6] mb-3">Features</p>
+                <h2 class="text-3xl md:text-4xl font-bold">Alles was Sie fuer BVBS brauchen</h2>
+                <p class="mt-4 text-lg text-[#434655] max-w-2xl mx-auto">Von der PDF-Analyse bis zum fertigen ABS-Export — vollautomatisch und zuverlaessig.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white rounded-2xl p-7 transition-all duration-300 cursor-default">
+                    <div class="w-12 h-12 rounded-xl bg-[#004ac6]/5 flex items-center justify-center text-[#004ac6] mb-5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">KI-Extraktion</h3>
+                    <p class="text-sm text-[#434655] leading-relaxed">Vision-KI erkennt alle Positionen, Durchmesser, Laengen und Biegeformen direkt aus dem PDF.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white rounded-2xl p-7 transition-all duration-300 cursor-default">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 mb-5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Automatische Validierung</h3>
+                    <p class="text-sm text-[#434655] leading-relaxed">9 Business-Regeln pruefen Schenkelsummen, Durchmesser-Plausibilitaet und Geometrie-Integritaet.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white rounded-2xl p-7 transition-all duration-300 cursor-default">
+                    <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 mb-5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">ABS 3.x Export</h3>
+                    <p class="text-sm text-[#434655] leading-relaxed">Byte-exakter BVBS-Export mit korrekter Checksum, ISO 8859-1 Codierung und CRLF-Zeilenenden.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card bg-white rounded-2xl p-7 transition-all duration-300 cursor-default">
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 mb-5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Positionen bearbeiten</h3>
+                    <p class="text-sm text-[#434655] leading-relaxed">Erkannte Positionen inline korrigieren bevor Sie exportieren. ABS wird automatisch neu generiert.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card bg-white rounded-2xl p-7 transition-all duration-300 cursor-default">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Team-Zusammenarbeit</h3>
+                    <p class="text-sm text-[#434655] leading-relaxed">Nutzer einladen, Rollen vergeben, Scan-Historie teilen. Alles zentral verwaltet.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card bg-white rounded-2xl p-7 transition-all duration-300 cursor-default">
+                    <div class="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center text-red-600 mb-5">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">E-Mail-Benachrichtigungen</h3>
+                    <p class="text-sm text-[#434655] leading-relaxed">Automatische Benachrichtigung wenn ein Scan abgeschlossen ist oder Ihre Aufmerksamkeit braucht.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="workflow" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-sm font-bold uppercase tracking-widest text-[#004ac6] mb-3">Workflow</p>
+                <h2 class="text-3xl md:text-4xl font-bold">In 3 Schritten zur ABS-Datei</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-2xl gradient-bg text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-[#004ac6]/20">1</div>
+                    <h3 class="text-lg font-bold mb-3">PDF hochladen</h3>
+                    <p class="text-sm text-[#434655] leading-relaxed">Bewehrungsplan als PDF per Drag & Drop hochladen. Mehrere Dateien gleichzeitig moeglich.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-2xl gradient-bg text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-[#004ac6]/20">2</div>
+                    <h3 class="text-lg font-bold mb-3">KI analysiert</h3>
+                    <p class="text-sm text-[#434655] leading-relaxed">Unsere KI erkennt alle Positionen, Durchmesser, Stahlgueten und Biegeformen automatisch.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-2xl gradient-bg text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-[#004ac6]/20">3</div>
+                    <h3 class="text-lg font-bold mb-3">ABS exportieren</h3>
+                    <p class="text-sm text-[#434655] leading-relaxed">Ergebnis pruefen, bei Bedarf korrigieren und die fertige ABS-Datei herunterladen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-sm font-bold uppercase tracking-widest text-[#004ac6] mb-3">Preise</p>
+                <h2 class="text-3xl md:text-4xl font-bold">Transparent und fair</h2>
+                <p class="mt-4 text-lg text-[#434655]">Keine versteckten Kosten. Jederzeit kuendbar.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Professional -->
+                <div class="pricing-card bg-white rounded-2xl p-8 transition-all duration-300 border border-[#e2e8f8]">
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold">Professional</h3>
+                        <p class="text-sm text-[#434655] mt-1">Fuer kleine Teams und Ingenieurbueros</p>
+                    </div>
+                    <div class="flex items-baseline gap-1 mb-8">
+                        <span class="text-5xl font-extrabold">279</span>
+                        <span class="text-xl font-semibold text-[#434655]">EUR</span>
+                        <span class="text-sm text-[#737686]">/ Monat</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-[#434655]">
+                            <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span><strong>3 Benutzer</strong> inklusive</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-[#434655]">
+                            <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span><strong>100 Scans</strong> pro Monat</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-[#434655]">
+                            <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            ABS 3.x Export
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-[#434655]">
+                            <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            E-Mail-Benachrichtigungen
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-[#434655]">
+                            <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            Standard-Validierung
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-[#434655]">
+                            <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            E-Mail-Support
+                        </li>
+                    </ul>
+                    <a href="https://app.rebero.io/login" class="block w-full text-center py-3.5 rounded-xl border-2 border-[#004ac6] text-[#004ac6] font-semibold text-sm hover:bg-[#004ac6] hover:text-white transition-all">
+                        Jetzt starten
+                    </a>
+                </div>
+
+                <!-- Business -->
+                <div class="pricing-card relative bg-white rounded-2xl p-8 transition-all duration-300 border-2 border-[#004ac6] shadow-xl shadow-[#004ac6]/10">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 gradient-bg text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                        Beliebteste Wahl
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold">Business</h3>
+                        <p class="text-sm text-[#434655] mt-1">Fuer groessere Teams mit hohem Volumen</p>
+                    </div>
+                    <div class="flex items-baseline gap-1 mb-8">
+                        <span class="text-5xl font-extrabold">479</span>
+                        <span class="text-xl font-semibold text-[#434655]">EUR</span>
+                        <span class="text-sm text-[#737686]">/ Monat</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-[#434655]">
+                            <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span><strong>10 Benutzer</strong> inklusive</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-[#434655]">
+                            <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span><strong>500 Scans</strong> pro Monat</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-[#434655]">
+                            <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            ABS 3.x + CSV Export
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-[#434655]">
+                            <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            Erweiterte Validierung
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-[#434655]">
+                            <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            Team-Management + Audit-Log
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-[#434655]">
+                            <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            Prioritaets-Support + API-Zugang
+                        </li>
+                    </ul>
+                    <a href="https://app.rebero.io/login" class="block w-full text-center py-3.5 rounded-xl gradient-bg text-white font-semibold text-sm shadow-lg shadow-[#004ac6]/20 hover:opacity-90 transition-all">
+                        Jetzt starten
+                    </a>
+                </div>
+            </div>
+
+            <p class="text-center text-sm text-[#737686] mt-8">
+                Alle Preise zzgl. MwSt. 14 Tage kostenlos testen. Keine Kreditkarte erforderlich.
+            </p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Bereit, Ihre Bewehrungsplaene zu digitalisieren?</h2>
+            <p class="text-lg text-[#434655] mb-10 max-w-2xl mx-auto">
+                Starten Sie jetzt und erleben Sie, wie Rebero Ihren Workflow beschleunigt.
+                14 Tage kostenlos, keine Kreditkarte noetig.
+            </p>
+            <a href="https://app.rebero.io/login" class="inline-block gradient-bg text-white px-10 py-4 rounded-xl text-base font-semibold shadow-xl shadow-[#004ac6]/25 hover:shadow-2xl hover:-translate-y-0.5 transition-all">
+                Kostenlos testen
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#151c27] text-white py-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <img src="logo.png" alt="Rebero" class="h-8 brightness-0 invert mb-4">
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Intelligente Bewehrungsdaten. PDF zu BVBS/ABS — automatisch und zuverlaessig.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-sm">Produkt</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-sm text-slate-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#pricing" class="text-sm text-slate-400 hover:text-white transition-colors">Preise</a></li>
+                        <li><a href="#workflow" class="text-sm text-slate-400 hover:text-white transition-colors">So funktioniert's</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-sm">Unternehmen</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:kontakt@rebero.io" class="text-sm text-slate-400 hover:text-white transition-colors">Kontakt</a></li>
+                        <li><a href="#" class="text-sm text-slate-400 hover:text-white transition-colors">Impressum</a></li>
+                        <li><a href="#" class="text-sm text-slate-400 hover:text-white transition-colors">Datenschutz</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-sm">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:support@rebero.io" class="text-sm text-slate-400 hover:text-white transition-colors">support@rebero.io</a></li>
+                        <li><a href="https://app.rebero.io/login" class="text-sm text-slate-400 hover:text-white transition-colors">App Login</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center">
+                <p class="text-sm text-slate-500">&copy; 2026 Rebero. Alle Rechte vorbehalten. Server in Deutschland.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
