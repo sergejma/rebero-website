@@ -38,8 +38,8 @@
             </div>
             <div class="flex items-center gap-3">
                 <a href="https://app.rebero.io/login" class="text-sm font-medium text-[#434655] hover:text-[#004ac6] transition-colors">Anmelden</a>
-                <a href="https://app.rebero.io/login" class="gradient-bg text-white px-5 py-2.5 rounded-lg text-sm font-semibold shadow-lg shadow-[#004ac6]/20 hover:opacity-90 transition-all">
-                    Kostenlos testen
+                <a href="#waitlist" class="gradient-bg text-white px-5 py-2.5 rounded-lg text-sm font-semibold shadow-lg shadow-[#004ac6]/20 hover:opacity-90 transition-all">
+                    Beta-Zugang
                 </a>
             </div>
         </div>
@@ -52,7 +52,7 @@
             <div class="max-w-3xl mx-auto text-center">
                 <div class="animate-fade-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#004ac6]/5 border border-[#004ac6]/10 text-sm font-medium text-[#004ac6] mb-8">
                     <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-                    Jetzt verfügbar — KI-gestützte BVBS-Konvertierung
+                    Exklusiver Beta-Zugang — Limitierte Plätze
                 </div>
                 <h1 class="animate-fade-up animate-delay-1 text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
                     Bewehrungspläne
@@ -61,17 +61,16 @@
                 </h1>
                 <p class="animate-fade-up animate-delay-2 text-base sm:text-xl text-[#434655] leading-relaxed mb-8 sm:mb-10 max-w-2xl mx-auto">
                     Rebero wandelt PDF-Bewehrungspläne in Sekunden in BVBS/ABS-Dateien um.
-                    KI-Extraktion, automatische Validierung, sofortiger Export.
+                    Sichern Sie sich jetzt Ihren exklusiven Zugang zum Beta-Test.
                 </p>
-                <div class="animate-fade-up animate-delay-3 flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="https://app.rebero.io/login" class="gradient-bg text-white px-8 py-4 rounded-xl text-base font-semibold shadow-xl shadow-[#004ac6]/25 hover:shadow-2xl hover:shadow-[#004ac6]/30 hover:-translate-y-0.5 transition-all">
-                        Jetzt kostenlos starten
-                    </a>
-                    <a href="#workflow" class="flex items-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-[#434655] bg-white border border-[#e2e8f8] hover:border-[#004ac6]/30 hover:text-[#004ac6] transition-all">
-                        So funktioniert's
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </a>
-                </div>
+                <form id="waitlist" action="https://formspree.io/f/xnjlqkoq" method="POST" class="animate-fade-up animate-delay-3 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-lg mx-auto">
+                    <input type="hidden" name="_subject" value="Neuer Beta-Interessent — rebero.io">
+                    <input type="email" name="email" required placeholder="Ihre E-Mail-Adresse" class="w-full sm:flex-1 px-5 py-4 rounded-xl border border-[#e2e8f8] text-base focus:outline-none focus:ring-2 focus:ring-[#004ac6]/30 focus:border-[#004ac6]">
+                    <button type="submit" class="w-full sm:w-auto gradient-bg text-white px-8 py-4 rounded-xl text-base font-semibold shadow-xl shadow-[#004ac6]/25 hover:shadow-2xl hover:shadow-[#004ac6]/30 hover:-translate-y-0.5 transition-all whitespace-nowrap">
+                        Platz sichern
+                    </button>
+                </form>
+                <p class="animate-fade-up animate-delay-4 text-sm text-[#737686] mt-4 text-center">Kein Spam — nur Ihr persönlicher Beta-Zugang.</p>
             </div>
 
             <!-- Stats -->
@@ -282,8 +281,8 @@
                             E-Mail-Support
                         </li>
                     </ul>
-                    <a href="https://app.rebero.io/login" class="block w-full text-center py-3.5 rounded-xl border-2 border-[#004ac6] text-[#004ac6] font-semibold text-sm hover:bg-[#004ac6] hover:text-white transition-all">
-                        Jetzt starten
+                    <a href="#waitlist" class="block w-full text-center py-3.5 rounded-xl border-2 border-[#004ac6] text-[#004ac6] font-semibold text-sm hover:bg-[#004ac6] hover:text-white transition-all">
+                        Beta-Zugang sichern
                     </a>
                 </div>
 
@@ -327,14 +326,14 @@
                             Prioritäts-Support + API-Zugang
                         </li>
                     </ul>
-                    <a href="https://app.rebero.io/login" class="block w-full text-center py-3.5 rounded-xl gradient-bg text-white font-semibold text-sm shadow-lg shadow-[#004ac6]/20 hover:opacity-90 transition-all">
-                        Jetzt starten
+                    <a href="#waitlist" class="block w-full text-center py-3.5 rounded-xl gradient-bg text-white font-semibold text-sm shadow-lg shadow-[#004ac6]/20 hover:opacity-90 transition-all">
+                        Beta-Zugang sichern
                     </a>
                 </div>
             </div>
 
             <p class="text-center text-sm text-[#737686] mt-8">
-                Alle Preise zzgl. MwSt. 14 Tage kostenlos testen. Keine Kreditkarte erforderlich.
+                Alle Preise zzgl. MwSt. Beta-Tester erhalten exklusive Konditionen.
             </p>
         </div>
     </section>
@@ -344,12 +343,16 @@
         <div class="max-w-4xl mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">Bereit, Ihre Bewehrungspläne zu digitalisieren?</h2>
             <p class="text-lg text-[#434655] mb-10 max-w-2xl mx-auto">
-                Starten Sie jetzt und erleben Sie, wie Rebero Ihren Workflow beschleunigt.
-                14 Tage kostenlos, keine Kreditkarte nötig.
+                Sichern Sie sich jetzt Ihren exklusiven Beta-Zugang.
+                Limitierte Plätze — kostenlos und unverbindlich.
             </p>
-            <a href="https://app.rebero.io/login" class="inline-block gradient-bg text-white px-10 py-4 rounded-xl text-base font-semibold shadow-xl shadow-[#004ac6]/25 hover:shadow-2xl hover:-translate-y-0.5 transition-all">
-                Kostenlos testen
-            </a>
+            <form action="https://formspree.io/f/xnjlqkoq" method="POST" class="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-lg mx-auto">
+                <input type="hidden" name="_subject" value="Neuer Beta-Interessent — rebero.io">
+                <input type="email" name="email" required placeholder="Ihre E-Mail-Adresse" class="w-full sm:flex-1 px-5 py-4 rounded-xl border border-[#e2e8f8] text-base focus:outline-none focus:ring-2 focus:ring-[#004ac6]/30 focus:border-[#004ac6]">
+                <button type="submit" class="w-full sm:w-auto gradient-bg text-white px-8 py-4 rounded-xl text-base font-semibold shadow-xl shadow-[#004ac6]/25 hover:shadow-2xl hover:-translate-y-0.5 transition-all whitespace-nowrap">
+                    Platz sichern
+                </button>
+            </form>
         </div>
     </section>
 
