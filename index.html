@@ -63,20 +63,27 @@
                     Rebero wandelt PDF-Bewehrungspläne in Sekunden in BVBS/ABS-Dateien um.
                     Sichern Sie sich jetzt Ihren exklusiven Zugang zum Beta-Test.
                 </p>
-                <form id="waitlist" action="https://formspree.io/f/xnjlqkoq" method="POST" class="animate-fade-up animate-delay-3 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-lg mx-auto">
+                <div id="waitlist" class="scroll-mt-28"></div>
+                <form action="https://formspree.io/f/xnjlqkoq" method="POST" class="animate-fade-up animate-delay-3 max-w-lg mx-auto">
                     <input type="hidden" name="_subject" value="Neuer Beta-Interessent — rebero.io">
-                    <input type="email" name="email" required placeholder="Ihre E-Mail-Adresse" class="w-full sm:flex-1 px-5 py-4 rounded-xl border border-[#e2e8f8] text-base focus:outline-none focus:ring-2 focus:ring-[#004ac6]/30 focus:border-[#004ac6]">
-                    <button type="submit" class="w-full sm:w-auto gradient-bg text-white px-8 py-4 rounded-xl text-base font-semibold shadow-xl shadow-[#004ac6]/25 hover:shadow-2xl hover:shadow-[#004ac6]/30 hover:-translate-y-0.5 transition-all whitespace-nowrap">
-                        Platz sichern
-                    </button>
+                    <input type="hidden" name="_next" value="https://rebero.io/danke.html">
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                        <input type="email" name="email" required placeholder="Ihre E-Mail-Adresse" class="w-full sm:flex-1 px-5 py-4 rounded-xl border border-[#e2e8f8] text-base focus:outline-none focus:ring-2 focus:ring-[#004ac6]/30 focus:border-[#004ac6]">
+                        <button type="submit" class="w-full sm:w-auto gradient-bg text-white px-8 py-4 rounded-xl text-base font-semibold shadow-xl shadow-[#004ac6]/25 hover:shadow-2xl hover:shadow-[#004ac6]/30 hover:-translate-y-0.5 transition-all whitespace-nowrap">
+                            Platz sichern
+                        </button>
+                    </div>
+                    <label class="flex items-start gap-2 mt-4 cursor-pointer">
+                        <input type="checkbox" required class="mt-1 accent-[#004ac6] shrink-0">
+                        <span class="text-xs text-[#737686] leading-relaxed">Ich stimme der <a href="#" class="underline hover:text-[#004ac6]">Datenschutzerklärung</a> zu. Kein Marketing — nur Informationen zum Beta-Zugang. Daten werden DSGVO-konform auf Servern in Deutschland verarbeitet.</span>
+                    </label>
                 </form>
-                <p class="animate-fade-up animate-delay-4 text-sm text-[#737686] mt-4 text-center">Kein Spam — nur Ihr persönlicher Beta-Zugang.</p>
             </div>
 
             <!-- Stats -->
             <div class="animate-fade-up animate-delay-4 mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
                 <div class="text-center">
-                    <p class="text-3xl font-bold gradient-text">98%</p>
+                    <p class="text-3xl font-bold gradient-text">+90%</p>
                     <p class="text-sm text-[#737686] mt-1">Erkennungsrate</p>
                 </div>
                 <div class="text-center">
@@ -346,12 +353,19 @@
                 Sichern Sie sich jetzt Ihren exklusiven Beta-Zugang.
                 Limitierte Plätze — kostenlos und unverbindlich.
             </p>
-            <form action="https://formspree.io/f/xnjlqkoq" method="POST" class="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-lg mx-auto">
+            <form action="https://formspree.io/f/xnjlqkoq" method="POST" class="max-w-lg mx-auto">
                 <input type="hidden" name="_subject" value="Neuer Beta-Interessent — rebero.io">
-                <input type="email" name="email" required placeholder="Ihre E-Mail-Adresse" class="w-full sm:flex-1 px-5 py-4 rounded-xl border border-[#e2e8f8] text-base focus:outline-none focus:ring-2 focus:ring-[#004ac6]/30 focus:border-[#004ac6]">
-                <button type="submit" class="w-full sm:w-auto gradient-bg text-white px-8 py-4 rounded-xl text-base font-semibold shadow-xl shadow-[#004ac6]/25 hover:shadow-2xl hover:-translate-y-0.5 transition-all whitespace-nowrap">
-                    Platz sichern
-                </button>
+                <input type="hidden" name="_next" value="https://rebero.io/danke.html">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <input type="email" name="email" required placeholder="Ihre E-Mail-Adresse" class="w-full sm:flex-1 px-5 py-4 rounded-xl border border-[#e2e8f8] text-base focus:outline-none focus:ring-2 focus:ring-[#004ac6]/30 focus:border-[#004ac6]">
+                    <button type="submit" class="w-full sm:w-auto gradient-bg text-white px-8 py-4 rounded-xl text-base font-semibold shadow-xl shadow-[#004ac6]/25 hover:shadow-2xl hover:-translate-y-0.5 transition-all whitespace-nowrap">
+                        Platz sichern
+                    </button>
+                </div>
+                <label class="flex items-start gap-2 mt-4 cursor-pointer">
+                    <input type="checkbox" required class="mt-1 accent-[#004ac6] shrink-0">
+                    <span class="text-xs text-[#737686] leading-relaxed">Ich stimme der <a href="#" class="underline hover:text-[#004ac6]">Datenschutzerklärung</a> zu. Kein Marketing — nur Informationen zum Beta-Zugang. Daten werden DSGVO-konform auf Servern in Deutschland verarbeitet.</span>
+                </label>
             </form>
         </div>
     </section>
