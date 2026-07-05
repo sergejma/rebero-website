@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rebero — Intelligente Bewehrungsdaten</title>
-    <meta name="description" content="PDF-Bewehrungspläne automatisch in BVBS/ABS-Dateien umwandeln. KI-gestützte Extraktion, Validierung und Export für Stahlbau-Profis.">
+    <title>Rebero — Schluss mit Abtippen: PDF-Stahllisten automatisch als BVBS/ABS</title>
+    <meta name="description" content="9 von 10 Biegeformen werden nach abgetippten PDF-Listen gefertigt. Rebero liest Bewehrungspläne per KI und erzeugt geprüfte BVBS/ABS-Dateien — aus Abtippern werden Prüfer.">
     <link rel="icon" type="image/png" href="logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -21,6 +21,12 @@
         .animate-delay-2 { animation-delay: 0.2s; opacity: 0; }
         .animate-delay-3 { animation-delay: 0.3s; opacity: 0; }
         .animate-delay-4 { animation-delay: 0.4s; opacity: 0; }
+        /* Scan-Demo (vanilla, kein Framework) */
+        .scanline { background: linear-gradient(90deg, transparent, #2563eb, transparent); box-shadow: 0 0 12px 2px rgba(37,99,235,0.4); transition: top 0.12s linear; }
+        .demo-row { transition: color 0.5s ease, opacity 0.5s ease; }
+        .abs-line { opacity: 0; transform: translateX(8px); transition: opacity 0.45s ease, transform 0.45s ease; }
+        .abs-line.on { opacity: 1; transform: translateX(0); }
+        @media (prefers-reduced-motion: reduce) { .scanline { display: none; } }
     </style>
 </head>
 <body class="bg-[#f9f9ff] text-[#151c27] antialiased">
@@ -32,7 +38,8 @@
                 <img src="logo.png" alt="Rebero" class="h-8 sm:h-10">
             </div>
             <div class="hidden md:flex items-center gap-8">
-                <a href="#features" class="text-sm font-medium text-[#434655] hover:text-[#004ac6] transition-colors">Features</a>
+                <a href="#problem" class="text-sm font-medium text-[#434655] hover:text-[#004ac6] transition-colors">Warum Rebero</a>
+                <a href="#demo" class="text-sm font-medium text-[#434655] hover:text-[#004ac6] transition-colors">Live-Demo</a>
                 <a href="#workflow" class="text-sm font-medium text-[#434655] hover:text-[#004ac6] transition-colors">So funktioniert's</a>
                 <a href="#pricing" class="text-sm font-medium text-[#434655] hover:text-[#004ac6] transition-colors">Preise</a>
             </div>
@@ -52,16 +59,16 @@
             <div class="max-w-3xl mx-auto text-center">
                 <div class="animate-fade-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#004ac6]/5 border border-[#004ac6]/10 text-sm font-medium text-[#004ac6] mb-8">
                     <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-                    Exklusiver Beta-Zugang — Limitierte Plätze
+                    DIN 1045-1000 fordert digitale Bewehrungsdaten — Rebero liefert sie aus jedem PDF
                 </div>
                 <h1 class="animate-fade-up animate-delay-1 text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
-                    Bewehrungspläne
-                    <span class="gradient-text"> automatisch</span>
-                    digitalisieren
+                    Schluss mit
+                    <span class="gradient-text"> Abtippen</span>.
                 </h1>
                 <p class="animate-fade-up animate-delay-2 text-base sm:text-xl text-[#434655] leading-relaxed mb-8 sm:mb-10 max-w-2xl mx-auto">
-                    Rebero wandelt PDF-Bewehrungspläne in Sekunden in BVBS/ABS-Dateien um.
-                    Sichern Sie sich jetzt Ihren exklusiven Zugang zum Beta-Test.
+                    Rebero liest Ihre PDF-Stahllisten und Biegelisten per KI und erzeugt in Minuten
+                    geprüfte <strong>BVBS/ABS-Dateien</strong> für die Biegemaschine.
+                    Ihr Team prüft — statt Zahl für Zahl abzutippen.
                 </p>
                 <div id="waitlist" class="scroll-mt-28"></div>
                 <form action="https://formspree.io/f/xnjlqkoq" method="POST" class="animate-fade-up animate-delay-3 max-w-lg mx-auto">
@@ -83,22 +90,134 @@
             <!-- Stats -->
             <div class="animate-fade-up animate-delay-4 mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
                 <div class="text-center">
-                    <p class="text-3xl font-bold gradient-text">+90%</p>
-                    <p class="text-sm text-[#737686] mt-1">Erkennungsrate</p>
+                    <p class="text-3xl font-bold gradient-text">9 von 10</p>
+                    <p class="text-sm text-[#737686] mt-1">Positionen ohne Nacharbeit*</p>
                 </div>
                 <div class="text-center">
-                    <p class="text-3xl font-bold gradient-text">&lt;30s</p>
-                    <p class="text-sm text-[#737686] mt-1">Pro Bewehrungsplan</p>
+                    <p class="text-3xl font-bold gradient-text">Minuten</p>
+                    <p class="text-sm text-[#737686] mt-1">statt Stunden Abtippen</p>
                 </div>
                 <div class="text-center">
-                    <p class="text-3xl font-bold gradient-text">ABS 3.x</p>
-                    <p class="text-sm text-[#737686] mt-1">Standard-konform</p>
+                    <p class="text-3xl font-bold gradient-text">BVBS 3.x</p>
+                    <p class="text-sm text-[#737686] mt-1">Richtlinienkonform, Checksumme byte-exakt</p>
                 </div>
                 <div class="text-center">
                     <p class="text-3xl font-bold gradient-text">DSGVO</p>
                     <p class="text-sm text-[#737686] mt-1">Server in Deutschland</p>
                 </div>
             </div>
+            <p class="text-center text-xs text-[#9ca3af] mt-6">*gemessen über echte Kundenpläne (digitale Standard-Biegelisten)</p>
+        </div>
+    </section>
+
+    <!-- Problem: die 90%-Realität -->
+    <section id="problem" class="py-24 bg-[#151c27] text-white overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-sm font-bold uppercase tracking-widest text-[#8ab4ff] mb-3">Die Realität in Biegebetrieben</p>
+                    <h2 class="text-3xl md:text-5xl font-extrabold leading-tight mb-6">
+                        <span id="counter" class="text-[#8ab4ff]">0</span><span class="text-[#8ab4ff]">%</span><br>
+                        werden abgetippt.
+                    </h2>
+                    <p class="text-lg text-slate-300 leading-relaxed mb-6">
+                        Laut Umfrage des Branchenverbands ISB werden rund <strong class="text-white">9 von 10 Biegeformen</strong>
+                        nach PDF-Stahllisten gefertigt, die Mitarbeiter <strong class="text-white">Zahl für Zahl von Hand
+                        eintippen</strong> — obwohl jedes CAD-System längst digitale Daten exportieren könnte.
+                    </p>
+                    <ul class="space-y-4 text-slate-300">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-amber-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v4m0 4h.01M10.3 3.9l-8 14A2 2 0 004 21h16a2 2 0 001.7-3.1l-8-14a2 2 0 00-3.4 0z"/></svg>
+                            <span>Der Verband nennt es wörtlich: <em>„echter Mehraufwand"</em> mit <em>„hohem Fehlerrisiko"</em>.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-amber-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v4m0 4h.01M10.3 3.9l-8 14A2 2 0 004 21h16a2 2 0 001.7-3.1l-8-14a2 2 0 00-3.4 0z"/></svg>
+                            <span>Ein Tippfehler wird gebogen — und <strong class="text-white">falsch gebogener Stahl ist Ausschuss</strong>: Zurückbiegen ist nach Regelwerk tabu. Neu fertigen, neu liefern, Bauverzug.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                            <span>Die neue <strong class="text-white">DIN 1045-1000</strong> fordert digitale Bewehrungsdaten (z.&nbsp;B. als .abs). Rebero macht jedes PDF — auch Alt- und Fremdpläne — norm-tauglich.</span>
+                        </li>
+                    </ul>
+                    <p class="text-xs text-slate-500 mt-6">Quelle: ISB-Umfrage Frühjahr 2021 (Institut Stahlbetonbewehrung e.&nbsp;V.) — letzte verfügbare Branchenerhebung.</p>
+                </div>
+                <div class="bg-white/5 rounded-2xl p-8 backdrop-blur">
+                    <p class="text-sm font-bold uppercase tracking-widest text-[#8ab4ff] mb-6">Was ein einziger Fehler kostet</p>
+                    <div class="space-y-5">
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                            <span class="text-slate-300">Stahl neu (Material)</span>
+                            <span class="font-bold">verloren</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                            <span class="text-slate-300">Maschinenzeit, 2× Transport</span>
+                            <span class="font-bold">doppelt</span>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                            <span class="text-slate-300">Baustelle wartet</span>
+                            <span class="font-bold">Verzug</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-2">
+                            <span class="text-white font-semibold">Ein verhinderter Fehlbund</span>
+                            <span class="font-extrabold text-emerald-400">zahlt Rebero</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live-Demo Animation: Biegeliste -> ABS -->
+    <section id="demo" class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <p class="text-sm font-bold uppercase tracking-widest text-[#004ac6] mb-3">Live-Demo</p>
+                <h2 class="text-3xl md:text-4xl font-bold">Aus der Biegeliste wird die Maschinendatei</h2>
+                <p class="mt-4 text-lg text-[#434655] max-w-2xl mx-auto">So arbeitet Rebero: Positionen lesen, prüfen, als BVBS/ABS ausgeben — mit byte-exakter Checksumme.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <!-- Links: PDF-Biegeliste wird gescannt -->
+                <div class="bg-white rounded-2xl shadow-[0_12px_40px_-8px_rgba(21,28,39,0.12)] overflow-hidden">
+                    <div class="flex items-center gap-2 px-5 py-4 bg-[#f0f3ff]">
+                        <svg class="w-5 h-5 text-[#004ac6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        <p class="text-[13px] font-bold">Biegeliste (PDF)</p>
+                        <span class="ml-auto text-[11px] text-[#737686]">wird gelesen …</span>
+                    </div>
+                    <div id="scanbox" class="relative px-3 py-2">
+                        <div id="scanline" class="scanline pointer-events-none absolute inset-x-3 z-10 h-[2px] rounded-full" style="top:4%"></div>
+                        <!-- rows werden per JS befüllt -->
+                    </div>
+                    <div class="border-t border-slate-100 px-5 py-4">
+                        <div class="mb-2 flex items-end justify-between">
+                            <span class="text-[12px] font-semibold text-[#737686]">Automatisch übernommen</span>
+                            <span id="pct" class="text-2xl font-extrabold tabular-nums text-[#004ac6]">0%</span>
+                        </div>
+                        <div class="h-2 overflow-hidden rounded-full bg-slate-100">
+                            <div id="bar" class="h-full rounded-full gradient-bg" style="width:0%; transition: width 0.15s ease-out;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rechts: ABS-Datei entsteht -->
+                <div class="bg-[#151c27] rounded-2xl shadow-[0_12px_40px_-8px_rgba(21,28,39,0.25)] overflow-hidden">
+                    <div class="flex items-center gap-2 px-5 py-4 bg-white/5">
+                        <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        <p class="text-[13px] font-bold text-white">plan.abs — bereit für die Biegemaschine</p>
+                    </div>
+                    <div id="absbox" class="px-5 py-4 font-mono text-[11px] leading-6 text-emerald-300/90 min-h-[220px]">
+                        <!-- ABS-Zeilen per JS -->
+                    </div>
+                    <div id="absfooter" class="border-t border-white/10 px-5 py-4 flex items-center gap-4 text-[12px] text-slate-400 opacity-0" style="transition: opacity 0.5s;">
+                        <span class="flex items-center gap-1.5 text-emerald-400 font-semibold">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                            Checksumme ✓
+                        </span>
+                        <span>BVBS 3.x</span>
+                        <span>ASCII · CRLF</span>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-xs text-[#9ca3af] mt-6">Schematische Darstellung. Die echte App zeigt zusätzlich Biegeform-Skizzen zu jeder Position.</p>
         </div>
     </section>
 
@@ -118,24 +237,24 @@
             <!-- Detail Screenshot -->
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                    <h3 class="text-2xl font-bold mb-4">PDF-Vorschau + Positionsdetails</h3>
+                    <h3 class="text-2xl font-bold mb-4">Prüfen statt abtippen</h3>
                     <p class="text-[#434655] leading-relaxed mb-6">
-                        Sehen Sie den Original-Bewehrungsplan neben den extrahierten Positionen.
-                        Jede Position zeigt Durchmesser, Stahlgüte, Stückzahl, Länge und Gewicht.
-                        Fehlerhafte Geometrien werden automatisch erkannt und markiert.
+                        Original-Plan neben den erkannten Positionen, jede mit Biegeform-Skizze,
+                        Durchmesser, Stahlgüte, Stückzahl, Länge und Gewicht. Auffälligkeiten werden
+                        automatisch markiert — mit Ein-Klick-Korrektur, wo es eindeutig ist.
                     </p>
                     <ul class="space-y-3">
                         <li class="flex items-center gap-3 text-sm text-[#434655]">
                             <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            PDF-Vorschau direkt im Browser
+                            Biegeform-Skizze zu jeder Position
                         </li>
                         <li class="flex items-center gap-3 text-sm text-[#434655]">
                             <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            Inline-Bearbeitung vor dem Export
+                            Präzise Hinweise statt Rätselraten („Verdacht: cm/mm vertauscht")
                         </li>
                         <li class="flex items-center gap-3 text-sm text-[#434655]">
                             <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                            Automatische Gewichtsberechnung
+                            Ganze Staffeln mit einem Klick korrigieren
                         </li>
                     </ul>
                 </div>
@@ -152,62 +271,56 @@
             <div class="text-center mb-16">
                 <p class="text-sm font-bold uppercase tracking-widest text-[#004ac6] mb-3">Features</p>
                 <h2 class="text-3xl md:text-4xl font-bold">Alles was Sie für BVBS brauchen</h2>
-                <p class="mt-4 text-lg text-[#434655] max-w-2xl mx-auto">Von der PDF-Analyse bis zum fertigen ABS-Export — vollautomatisch und zuverlässig.</p>
+                <p class="mt-4 text-lg text-[#434655] max-w-2xl mx-auto">Von der PDF-Analyse bis zum fertigen ABS-Export — automatisch, geprüft, richtlinienkonform.</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Feature 1 -->
                 <div class="feature-card bg-white rounded-2xl p-7 transition-all duration-300 cursor-default">
                     <div class="w-12 h-12 rounded-xl bg-[#004ac6]/5 flex items-center justify-center text-[#004ac6] mb-5">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                     </div>
                     <h3 class="text-lg font-bold mb-2">KI-Extraktion</h3>
-                    <p class="text-sm text-[#434655] leading-relaxed">Vision-KI erkennt alle Positionen, Durchmesser, Längen und Biegeformen direkt aus dem PDF.</p>
+                    <p class="text-sm text-[#434655] leading-relaxed">Vision-KI liest Positionen, Durchmesser, Längen und Biegeformen direkt aus dem PDF — auch aus Scans.</p>
                 </div>
 
-                <!-- Feature 2 -->
                 <div class="feature-card bg-white rounded-2xl p-7 transition-all duration-300 cursor-default">
                     <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 mb-5">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     </div>
-                    <h3 class="text-lg font-bold mb-2">Automatische Validierung</h3>
-                    <p class="text-sm text-[#434655] leading-relaxed">9 Business-Regeln prüfen Schenkelsummen, Durchmesser-Plausibilität und Geometrie-Integrität.</p>
+                    <h3 class="text-lg font-bold mb-2">Deterministische Validierung</h3>
+                    <p class="text-sm text-[#434655] leading-relaxed">Schenkelsummen, Durchmesser-Plausibilität, Biegerollen, Geometrie-Integrität — geprüft in Code, nicht von der KI „gefühlt".</p>
                 </div>
 
-                <!-- Feature 3 -->
                 <div class="feature-card bg-white rounded-2xl p-7 transition-all duration-300 cursor-default">
                     <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 mb-5">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
                     </div>
                     <h3 class="text-lg font-bold mb-2">ABS 3.x Export</h3>
-                    <p class="text-sm text-[#434655] leading-relaxed">Byte-exakter BVBS-Export mit korrekter Checksum, ISO 8859-1 Codierung und CRLF-Zeilenenden.</p>
+                    <p class="text-sm text-[#434655] leading-relaxed">Byte-exakte Checksumme, reines ASCII, CRLF — richtlinienkonform und kompatibel zum bewährten 2.0-Kern, den jede Maschine versteht.</p>
                 </div>
 
-                <!-- Feature 4 -->
                 <div class="feature-card bg-white rounded-2xl p-7 transition-all duration-300 cursor-default">
                     <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 mb-5">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
                     </div>
-                    <h3 class="text-lg font-bold mb-2">Positionen bearbeiten</h3>
-                    <p class="text-sm text-[#434655] leading-relaxed">Erkannte Positionen inline korrigieren bevor Sie exportieren. ABS wird automatisch neu generiert.</p>
+                    <h3 class="text-lg font-bold mb-2">Prüfen &amp; korrigieren</h3>
+                    <p class="text-sm text-[#434655] leading-relaxed">Ihr Team wird zur Prüf- und Kontrollinstanz: markierte Positionen durchgehen, korrigieren, freigeben. ABS wird automatisch neu erzeugt.</p>
                 </div>
 
-                <!-- Feature 5 -->
                 <div class="feature-card bg-white rounded-2xl p-7 transition-all duration-300 cursor-default">
                     <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-5">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                     </div>
                     <h3 class="text-lg font-bold mb-2">Team-Zusammenarbeit</h3>
-                    <p class="text-sm text-[#434655] leading-relaxed">Nutzer einladen, Rollen vergeben, Scan-Historie teilen. Alles zentral verwaltet.</p>
+                    <p class="text-sm text-[#434655] leading-relaxed">Nutzer einladen, Rollen vergeben, Scan-Historie teilen. Wer was geprüft hat, bleibt nachvollziehbar.</p>
                 </div>
 
-                <!-- Feature 6 -->
                 <div class="feature-card bg-white rounded-2xl p-7 transition-all duration-300 cursor-default">
                     <div class="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center text-red-600 mb-5">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                     </div>
-                    <h3 class="text-lg font-bold mb-2">E-Mail-Benachrichtigungen</h3>
-                    <p class="text-sm text-[#434655] leading-relaxed">Automatische Benachrichtigung wenn ein Scan abgeschlossen ist oder Ihre Aufmerksamkeit braucht.</p>
+                    <h3 class="text-lg font-bold mb-2">Ehrliche Grenzen</h3>
+                    <p class="text-sm text-[#434655] leading-relaxed">Sonderformen und unklare Stellen werden markiert statt geraten — Sie sehen immer, was automatisch lief und was Ihre Prüfung braucht.</p>
                 </div>
             </div>
         </div>
@@ -219,23 +332,24 @@
             <div class="text-center mb-16">
                 <p class="text-sm font-bold uppercase tracking-widest text-[#004ac6] mb-3">Workflow</p>
                 <h2 class="text-3xl md:text-4xl font-bold">In 3 Schritten zur ABS-Datei</h2>
+                <p class="mt-4 text-lg text-[#434655] max-w-2xl mx-auto">Der Branchenverband beschreibt die Zukunft so: <em>„Es entfällt die manuelle Eingabe zugunsten einer Prüf- und Kontrollinstanz."</em> Genau so arbeitet Rebero.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-12">
                 <div class="text-center">
                     <div class="w-16 h-16 rounded-2xl gradient-bg text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-[#004ac6]/20">1</div>
                     <h3 class="text-lg font-bold mb-3">PDF hochladen</h3>
-                    <p class="text-sm text-[#434655] leading-relaxed">Bewehrungsplan als PDF per Drag & Drop hochladen. Mehrere Dateien gleichzeitig möglich.</p>
+                    <p class="text-sm text-[#434655] leading-relaxed">Bewehrungsplan, Stahlliste oder Biegeliste per Drag &amp; Drop — auch Scans und Altpläne.</p>
                 </div>
                 <div class="text-center">
                     <div class="w-16 h-16 rounded-2xl gradient-bg text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-[#004ac6]/20">2</div>
-                    <h3 class="text-lg font-bold mb-3">KI analysiert</h3>
-                    <p class="text-sm text-[#434655] leading-relaxed">Unsere KI erkennt alle Positionen, Durchmesser, Stahlgüten und Biegeformen automatisch.</p>
+                    <h3 class="text-lg font-bold mb-3">KI liest &amp; validiert</h3>
+                    <p class="text-sm text-[#434655] leading-relaxed">Alle Positionen mit Biegeform-Skizze, deterministisch gegengeprüft. Auffälliges wird markiert.</p>
                 </div>
                 <div class="text-center">
                     <div class="w-16 h-16 rounded-2xl gradient-bg text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-[#004ac6]/20">3</div>
-                    <h3 class="text-lg font-bold mb-3">ABS exportieren</h3>
-                    <p class="text-sm text-[#434655] leading-relaxed">Ergebnis prüfen, bei Bedarf korrigieren und die fertige ABS-Datei herunterladen.</p>
+                    <h3 class="text-lg font-bold mb-3">Prüfen &amp; exportieren</h3>
+                    <p class="text-sm text-[#434655] leading-relaxed">Kurz prüfen statt komplett abtippen — fertige ABS-Datei herunterladen und an den Leitstand geben.</p>
                 </div>
             </div>
         </div>
@@ -255,7 +369,7 @@
                 <div class="pricing-card bg-white rounded-2xl p-8 transition-all duration-300 border border-[#e2e8f8]">
                     <div class="mb-6">
                         <h3 class="text-xl font-bold">Professional</h3>
-                        <p class="text-sm text-[#434655] mt-1">Für kleine Teams und Ingenieurbüros</p>
+                        <p class="text-sm text-[#434655] mt-1">Für kleine Teams und Biegebetriebe</p>
                     </div>
                     <div class="flex items-baseline gap-1 mb-8">
                         <span class="text-5xl font-extrabold">279</span>
@@ -340,7 +454,8 @@
             </div>
 
             <p class="text-center text-sm text-[#737686] mt-8">
-                Alle Preise zzgl. MwSt. Beta-Tester erhalten exklusive Konditionen.
+                Alle Preise zzgl. MwSt. Beta-Tester erhalten exklusive Konditionen.<br>
+                <span class="text-[#434655] font-medium">Zum Vergleich: Ein einziger falsch gebogener Bund — Material, Neuanfertigung, zweimal Transport — kostet oft mehr als ein Monat Rebero.</span>
             </p>
         </div>
     </section>
@@ -348,7 +463,7 @@
     <!-- CTA -->
     <section class="py-24 bg-white">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Bereit, Ihre Bewehrungspläne zu digitalisieren?</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Machen Sie Ihr Team zur Prüfinstanz — nicht zum Abtipp-Büro.</h2>
             <p class="text-lg text-[#434655] mb-10 max-w-2xl mx-auto">
                 Sichern Sie sich jetzt Ihren exklusiven Beta-Zugang.
                 Limitierte Plätze — kostenlos und unverbindlich.
@@ -409,6 +524,128 @@
             </div>
         </div>
     </footer>
+
+    <script>
+    (function () {
+        var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        /* ── 90%-Zähler im Problem-Block ───────────────────────────── */
+        var counter = document.getElementById('counter');
+        var counterDone = false;
+        function runCounter() {
+            if (counterDone) return;
+            counterDone = true;
+            if (reduced) { counter.textContent = '90'; return; }
+            var start = null;
+            function tick(t) {
+                if (!start) start = t;
+                var p = Math.min(1, (t - start) / 1400);
+                counter.textContent = Math.round(90 * (1 - Math.pow(1 - p, 3)));
+                if (p < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }
+
+        /* ── Scan-Demo: Biegeliste → ABS ───────────────────────────── */
+        var ROWS = [
+            { pos: '1', glyph: 'M3 10 H25',            info: 'Ø12 · 6.000 mm',  abs: 'BF2D@Hp1@l6000@n42@d12@gB500B@…@C71@' },
+            { pos: '2', glyph: 'M5 4 V16 H24',          info: 'Ø10 · 2.400 mm',  abs: 'BF2D@Hp2@l2400@n18@d10@…Gl850@w90@l1550@w0@C64@' },
+            { pos: '3', glyph: 'M5 16 V5 H23 V16',      info: 'Ø8 · 1.850 mm',   abs: 'BF2D@Hp3@l1850@n63@d8@…Gl400@w90@l1050@w90@l400@w0@C58@' },
+            { pos: '4', glyph: 'M5 4 V16 H24',          info: 'Ø12 · 3.200 mm',  abs: 'BF2D@Hp4@l3200@n24@d12@…Gl700@w90@l2500@w0@C69@' },
+            { pos: '5', glyph: 'M3 10 H25',            info: 'Ø16 · 8.100 mm',  abs: 'BF2D@Hp5@l8100@n12@d16@gB500B@…@C77@' }
+        ];
+        var scanbox = document.getElementById('scanbox');
+        var absbox = document.getElementById('absbox');
+        ROWS.forEach(function (r, i) {
+            var row = document.createElement('div');
+            row.className = 'demo-row flex items-center gap-3 rounded-xl px-3 py-2.5';
+            row.innerHTML =
+                '<span class="w-4 text-center text-[11px] font-bold text-slate-400">' + r.pos + '</span>' +
+                '<svg viewBox="0 0 28 20" class="h-5 w-7 shrink-0"><path d="' + r.glyph + '" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+                '<span class="flex-1 text-[12px] font-medium text-slate-400">' + r.info + '</span>' +
+                '<span class="status flex items-center gap-1 text-[11px] font-bold text-slate-300">···</span>';
+            scanbox.appendChild(row);
+            var abs = document.createElement('div');
+            abs.className = 'abs-line whitespace-nowrap overflow-hidden text-ellipsis';
+            abs.textContent = r.abs;
+            absbox.appendChild(abs);
+        });
+        var rows = scanbox.querySelectorAll('.demo-row');
+        var absLines = absbox.querySelectorAll('.abs-line');
+        var scanline = document.getElementById('scanline');
+        var bar = document.getElementById('bar');
+        var pct = document.getElementById('pct');
+        var absfooter = document.getElementById('absfooter');
+        var OK = '<svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg> ok';
+
+        var RAMP = 5200, HOLD = 2200, demoStart = null, running = false;
+        function reset() {
+            rows.forEach(function (row) {
+                row.querySelector('.status').innerHTML = '···';
+                row.querySelector('.status').className = 'status flex items-center gap-1 text-[11px] font-bold text-slate-300';
+                row.querySelector('path').setAttribute('stroke', '#94a3b8');
+                row.querySelector('.flex-1').style.color = '#94a3b8';
+            });
+            absLines.forEach(function (l) { l.classList.remove('on'); });
+            absfooter.style.opacity = '0';
+        }
+        function frame(t) {
+            if (!demoStart) demoStart = t;
+            var m = (t - demoStart) % (RAMP + HOLD);
+            var p = Math.min(100, (m / RAMP) * 100);
+            if (m < 60) reset();
+            scanline.style.top = Math.min(4 + p * 0.84, 88) + '%';
+            scanline.style.opacity = (p > 1 && p < 95) ? '1' : '0';
+            var shown = Math.round(Math.min(1, p / 82) * 95);
+            pct.textContent = shown + '%';
+            bar.style.width = shown + '%';
+            rows.forEach(function (row, i) {
+                if (p > 14 + i * 15) {
+                    var st = row.querySelector('.status');
+                    if (st.textContent.indexOf('ok') === -1) {
+                        st.innerHTML = OK;
+                        st.className = 'status flex items-center gap-1 text-[11px] font-bold text-[#004ac6]';
+                        row.querySelector('path').setAttribute('stroke', '#004ac6');
+                        row.querySelector('.flex-1').style.color = '#151c27';
+                        absLines[i].classList.add('on');
+                    }
+                }
+            });
+            absfooter.style.opacity = p >= 95 ? '1' : '0';
+            requestAnimationFrame(frame);
+        }
+        function runDemo() {
+            if (running) return;
+            running = true;
+            if (reduced) {
+                rows.forEach(function (row, i) {
+                    row.querySelector('.status').innerHTML = OK;
+                    row.querySelector('.status').className = 'status flex items-center gap-1 text-[11px] font-bold text-[#004ac6]';
+                    row.querySelector('path').setAttribute('stroke', '#004ac6');
+                    row.querySelector('.flex-1').style.color = '#151c27';
+                    absLines[i].classList.add('on');
+                });
+                pct.textContent = '95%'; bar.style.width = '95%';
+                absfooter.style.opacity = '1'; scanline.style.display = 'none';
+                return;
+            }
+            requestAnimationFrame(frame);
+        }
+
+        /* ── Start beim Scrollen in den Viewport ───────────────────── */
+        if ('IntersectionObserver' in window) {
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (!e.isIntersecting) return;
+                    if (e.target.id === 'problem') runCounter();
+                    if (e.target.id === 'demo') runDemo();
+                });
+            }, { threshold: 0.35 });
+            io.observe(document.getElementById('problem'));
+            io.observe(document.getElementById('demo'));
+        } else { runCounter(); runDemo(); }
+    })();
+    </script>
 
 </body>
 </html>
