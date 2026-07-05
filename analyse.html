@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branchen-Analyse: Vom PDF zur Biegemaschine — Rebero</title>
+    <meta name="description" content="Warum 9 von 10 Biegeformen nach abgetippten PDF-Listen gefertigt werden, was ein Fehlbund kostet und wie Bewehrungsdaten wirklich zur Maschine kommen. Mit Quellen.">
+    <link rel="icon" type="image/png" href="logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #004ac6 0%, #2563eb 50%, #3b82f6 100%); }
+        .gradient-text { background: linear-gradient(135deg, #004ac6, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    </style>
+</head>
+<body class="bg-[#f9f9ff] text-[#151c27] antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-[#e2e8f8]/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+            <a href="/"><img src="logo.png" alt="Rebero" class="h-8 sm:h-10"></a>
+            <div class="flex items-center gap-3">
+                <a href="/" class="text-sm font-medium text-[#434655] hover:text-[#004ac6] transition-colors">Zur Startseite</a>
+                <a href="/#waitlist" class="gradient-bg text-white px-5 py-2.5 rounded-lg text-sm font-semibold shadow-lg shadow-[#004ac6]/20 hover:opacity-90 transition-all">Beta-Zugang</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-28 sm:pt-36 pb-12 max-w-3xl mx-auto px-6">
+        <p class="text-sm font-bold uppercase tracking-widest text-[#004ac6] mb-3">Branchen-Analyse · Stand Juli 2026</p>
+        <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight mb-6">
+            Vom PDF zur Biegemaschine: <span class="gradient-text">wie Bewehrungsdaten wirklich fließen</span>
+        </h1>
+        <p class="text-lg text-[#434655] leading-relaxed">
+            Wir haben Verbandspapiere, Normen, Fachpresse, Software-Dokumentationen und internationale
+            Praxisberichte ausgewertet. Hier ist das Ergebnis — mit Quellen, ohne Marketing-Nebel.
+        </p>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 pb-24 space-y-14">
+
+        <!-- 1 -->
+        <section class="bg-white rounded-2xl p-8 shadow-[0_12px_32px_-4px_rgba(21,28,39,0.06)]">
+            <h2 class="text-2xl font-bold mb-4">1 · Die Kernzahl: ~90 % werden abgetippt</h2>
+            <p class="text-[#434655] leading-relaxed mb-4">
+                Laut einer Umfrage des <strong>ISB (Institut Stahlbetonbewehrung e.&nbsp;V.)</strong> — dem Verband
+                der Biegebetriebe — werden nur etwa <strong>ein Zehntel aller Biegeformen</strong> mit digitalen
+                Bewehrungsdaten gefertigt. Für die restlichen ~90&nbsp;% tippen Mitarbeiter die PDF-Stahllisten
+                <em>„Zahl für Zahl"</em> in ihre Systeme. Der Verband nennt das wörtlich
+                <em>„echten Mehraufwand"</em> mit <em>„hohem Fehlerrisiko"</em>.
+            </p>
+            <p class="text-[#434655] leading-relaxed">
+                Bemerkenswert: Es liegt <strong>nicht an der Technik</strong>. Praktisch jedes CAD-System
+                (SOFiSTiK, Allplan, STRAKON, Tekla u.&nbsp;a.) exportiert seit über 15 Jahren BVBS/ABS-Dateien.
+                Der Medienbruch ist ein <strong>Prozessproblem</strong> — kein Softwareproblem.
+            </p>
+            <p class="text-xs text-[#9ca3af] mt-4">Quellen: ISB-Umfrage Frühjahr 2021 (letzte verfügbare Branchenerhebung); ISB-Positionspapier „Digitale Bewehrungsdaten — Stand der Technik"; Fachpresse (Computer Spezial, THIS-Magazin).</p>
+        </section>
+
+        <!-- 2 -->
+        <section class="bg-white rounded-2xl p-8 shadow-[0_12px_32px_-4px_rgba(21,28,39,0.06)]">
+            <h2 class="text-2xl font-bold mb-4">2 · Warum das PDF nicht verschwindet</h2>
+            <ul class="space-y-4 text-[#434655] leading-relaxed">
+                <li><strong>Der geprüfte Plan ist das Vertragsdokument.</strong> Lieferfristen beginnen laut branchenüblichen AGB erst mit Vorliegen der freigegebenen, geprüften Pläne und Stahllisten. Juristisch „wahr" ist das PDF — nicht die CAD-Datei.</li>
+                <li><strong>Lange Ketten:</strong> Generalunternehmer → Subunternehmer → Stahlhandel → Biegerei. Über jede Firmengrenze wandert der geprüfte Plan, nicht das Modell. Schal- und Bewehrungsplanung wird zudem oft an externe Büros vergeben.</li>
+                <li><strong>Selbst im Idealfall gilt „ABS <em>und</em> PDF":</strong> Lieferbedingungen im Stahlhandel verlangen beide — das PDF bleibt Kontrollinstanz, weil eine .abs-Datei ohne Werkzeug nicht visuell prüfbar ist.</li>
+                <li><strong>Altbestände:</strong> Unzählige Pläne existieren nur als Scan.</li>
+            </ul>
+        </section>
+
+        <!-- 3 -->
+        <section class="bg-[#151c27] text-white rounded-2xl p-8">
+            <h2 class="text-2xl font-bold mb-4">3 · Was ein einziger Übertragungsfehler kostet</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">
+                Falsch gebogener Betonstahl darf nach Regelwerk (DBV-Merkblatt „Rückbiegen") praktisch nicht
+                zurückgebogen werden — Kaltverformung und Anrissgefahr. Ein Tippfehler, der gebogen wird, bedeutet:
+            </p>
+            <div class="grid sm:grid-cols-2 gap-3 text-sm">
+                <div class="bg-white/5 rounded-xl px-4 py-3">Material verloren (Ausschuss)</div>
+                <div class="bg-white/5 rounded-xl px-4 py-3">Maschinenzeit doppelt</div>
+                <div class="bg-white/5 rounded-xl px-4 py-3">Transport hin und zurück</div>
+                <div class="bg-white/5 rounded-xl px-4 py-3">Baustelle wartet — Verzug</div>
+            </div>
+            <p class="text-slate-300 leading-relaxed mt-4">
+                International ist zusätzlich das <strong>Revisions-Problem</strong> als Standard-Fehlerquelle benannt:
+                Es wird nach einer <em>überholten</em> Planrevision gefertigt, weil Index-Pläne per E-Mail
+                zirkulieren und niemand sicher weiß, welcher Stand gilt. Planänderungen während der Ausführung
+                sind juristisch dokumentierter Alltagsfall; Stahlhändler bepreisen Listenänderungen standardmäßig
+                pro Position.
+            </p>
+        </section>
+
+        <!-- 4 -->
+        <section class="bg-white rounded-2xl p-8 shadow-[0_12px_32px_-4px_rgba(21,28,39,0.06)]">
+            <h2 class="text-2xl font-bold mb-4">4 · Der Soll-Prozess laut Verband und Norm</h2>
+            <p class="text-[#434655] leading-relaxed mb-4">
+                Das ISB beschreibt die Zielrolle des Menschen so:
+            </p>
+            <blockquote class="border-l-4 border-[#004ac6] pl-5 py-1 text-lg font-medium text-[#151c27] mb-4">
+                „Es entfällt die manuelle Eingabe zugunsten einer Prüf- und Kontrollinstanz beim Weiterverarbeiter."
+            </blockquote>
+            <p class="text-[#434655] leading-relaxed">
+                Und die neue <strong>DIN 1045-1000</strong> (ab 2023) nimmt die Anforderung auf, Bewehrungsdaten
+                digital zu übergeben — z.&nbsp;B. als .abs-Datei. Der Verband beziffert das Einsparpotenzial der
+                digitalen Übergabe auf <strong>„bis zu 70&nbsp;% und mehr"</strong> des Eingabeaufwands.
+                Kurz: Aus Abtippern sollen Prüfer werden. Genau dieses Rollenbild setzt Rebero um — für alle
+                Pläne, die eben doch nur als PDF ankommen.
+            </p>
+            <p class="text-xs text-[#9ca3af] mt-4">Quellen: ISB Technisches Merkblatt „Digitale Bewehrungsdaten"; Computer Spezial zu DIN 1045-1000; BVBS-Richtlinie 3.1.</p>
+        </section>
+
+        <!-- 5 -->
+        <section class="bg-white rounded-2xl p-8 shadow-[0_12px_32px_-4px_rgba(21,28,39,0.06)]">
+            <h2 class="text-2xl font-bold mb-4">5 · Wie Daten wirklich zur Maschine kommen</h2>
+            <ul class="space-y-4 text-[#434655] leading-relaxed">
+                <li><strong>Nicht „Datei an die Maschine", sondern über den Leitstand:</strong> Produktionssoftware verteilt Positionen auf den Maschinenpark (alle gängigen Hersteller — Schnell, Progress, MEP, PEDAX, Stema u.&nbsp;v.&nbsp;m. — sprechen BVBS als kleinsten gemeinsamen Nenner).</li>
+                <li><strong>Der Datensatz wird physisch:</strong> Jede Position bekommt ein wetterfestes Etikett mit <strong>PDF417-Barcode, der den kompletten BVBS-Datensatz enthält</strong>. Gescannt an der Maschine, beim Verladen, auf der Baustelle. Die Format-Regeln (reines ASCII, max. 1000 Zeichen pro Datensatz, exakte Prüfsumme) sind deshalb keine Bürokratie — sie sind Barcode-Physik.</li>
+                <li><strong>Viewer-Kultur:</strong> Vor der Produktion werden ABS-Dateien in kostenlosen BVBS-Viewern (ISB, Glaser QuickView u.&nbsp;a.) visuell geprüft — Positionsliste plus Biegeform-Grafik. Wer Bewehrungsdaten erzeugt, muss diese Prüfung bestehen.</li>
+                <li><strong>Header-Daten sind halbe Miete:</strong> Projekt, Plan, Position, Durchmesser, Güte, Stückzahl landen auf Etikett, Lieferschein und Rechnung — Metadaten-Qualität ist so wichtig wie Geometrie-Qualität.</li>
+            </ul>
+        </section>
+
+        <!-- 6 -->
+        <section class="bg-white rounded-2xl p-8 shadow-[0_12px_32px_-4px_rgba(21,28,39,0.06)]">
+            <h2 class="text-2xl font-bold mb-4">6 · Die Menschen, die damit arbeiten</h2>
+            <ul class="space-y-4 text-[#434655] leading-relaxed">
+                <li><strong>24,2&nbsp;%</strong> der Beschäftigten im Bauhauptgewerbe haben einen ausländischen Pass (2024, verdreifacht seit 2010); Eisenflechter-Kolonnen werden häufig mit <em>„einem Deutschsprecher pro Team"</em> vermittelt.</li>
+                <li>„Betonstahlbieger und -flechter" ist ein <strong>Anlernberuf</strong> — Qualifikation entsteht im Betrieb, nicht in der Berufsschule.</li>
+                <li>Demografie: den ~12.300 neuen Azubis (2024) stehen fast 20.000 Renteneintritte gegenüber.</li>
+            </ul>
+            <p class="text-[#434655] leading-relaxed mt-4">
+                Konsequenz für jede Software in dieser Branche: <strong>wenig Text, klare Zahlen,
+                Biegeform-Skizzen als Universalsprache</strong> — und der Prüf-Arbeitsplatz sitzt in der
+                Arbeitsvorbereitung am Desktop, nicht mit Handschuhen an der Maschine.
+            </p>
+            <p class="text-xs text-[#9ca3af] mt-4">Quellen: Hauptverband der Deutschen Bauindustrie (Zahlen im Zahlenbild, Fachkräftesituation); BERUFENET; VÖBV-Papier zum Lehrberuf.</p>
+        </section>
+
+        <!-- Fazit -->
+        <section class="gradient-bg text-white rounded-2xl p-8">
+            <h2 class="text-2xl font-bold mb-4">Fazit</h2>
+            <p class="leading-relaxed mb-6">
+                Die Branche hat das Ziel längst definiert: digitale Bewehrungsdaten, Menschen als Prüfinstanz,
+                keine Abtipperei. Woran es scheitert, ist der Weg vom <em>geprüften PDF</em> — dem Dokument, das
+                rechtlich und praktisch zählt — zur Maschinendatei. Genau diese Lücke schließt Rebero:
+                PDF hochladen, Positionen prüfen, richtlinienkonforme BVBS/ABS-Datei erhalten.
+            </p>
+            <a href="/#waitlist" class="inline-block bg-white text-[#004ac6] px-8 py-3.5 rounded-xl font-semibold shadow-lg hover:-translate-y-0.5 transition-all">
+                Beta-Zugang anfordern
+            </a>
+        </section>
+
+        <!-- Quellen -->
+        <section class="text-sm text-[#737686] leading-relaxed">
+            <h2 class="text-base font-bold text-[#151c27] mb-3">Zentrale Quellen</h2>
+            <ul class="space-y-1.5 list-disc pl-5">
+                <li><a class="underline hover:text-[#004ac6]" href="https://www.tsg-trebbin.de/wp-content/uploads/2023/07/www.tsg-trebbin.de-isb-positionpaper-digitale-bewehrungsdaten-stand-der-technik-04.pdf" rel="noopener" target="_blank">ISB-Positionspapier „Digitale Bewehrungsdaten – Stand der Technik"</a></li>
+                <li><a class="underline hover:text-[#004ac6]" href="https://www.isb-ev.de/wp-content/uploads/2020/11/ISB_TM4_DigBewehrungsdaten.pdf" rel="noopener" target="_blank">ISB Technisches Merkblatt „Digitale Bewehrungsdaten"</a></li>
+                <li><a class="underline hover:text-[#004ac6]" href="https://www.computer-spezial.de/artikel/voraussetzungen-fuer-die-durchgaengige-digitalisierung-der-baubranche-3705085.html" rel="noopener" target="_blank">Computer Spezial: Digitalisierung der Baubranche (ISB-Umfrage)</a></li>
+                <li><a class="underline hover:text-[#004ac6]" href="https://www.computer-spezial.de/artikel/digitale-bewehrungsdaten-in-die-neue-din-1045-1000-aufgenommen-3940238.html" rel="noopener" target="_blank">Computer Spezial: DIN 1045-1000 und digitale Bewehrungsdaten</a></li>
+                <li><a class="underline hover:text-[#004ac6]" href="https://www.bvbs.de/wp-content/uploads/2024/01/BVBS-Richtlinie-Austausch-von-Bewehrungsdaten-3.1-Dt_202100614.pdf" rel="noopener" target="_blank">BVBS-Richtlinie 3.1 (Austausch von Bewehrungsdaten)</a></li>
+                <li><a class="underline hover:text-[#004ac6]" href="https://www.bauindustrie.de/zahlen-fakten/publikationen/brancheninfo-bau/fachkraeftesituation-im-bauhauptgewerbe" rel="noopener" target="_blank">Bauindustrie: Fachkräftesituation im Bauhauptgewerbe</a></li>
+            </ul>
+            <p class="mt-4">Zusammengestellt vom Rebero-Team, Juli 2026. Fragen oder Korrekturen: <a class="underline" href="mailto:kontakt@rebero.io">kontakt@rebero.io</a></p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#151c27] text-white py-12">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <img src="logo.png" alt="Rebero" class="h-8 brightness-0 invert">
+            <div class="flex items-center gap-6 text-sm text-slate-400">
+                <a href="/" class="hover:text-white transition-colors">Startseite</a>
+                <a href="/impressum.html" class="hover:text-white transition-colors">Impressum</a>
+                <a href="/datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
